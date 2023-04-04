@@ -1,1 +1,2 @@
-print('hello, world')
+myAge = 25
+print(myAge)
