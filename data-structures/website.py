@@ -7,9 +7,15 @@ websites = (
     'twitter.com',
 )
 
+results = {}
+
 for website in websites:
     if not website.startswith('https://'):
         website = f'https://{website}'
     response = get(website)
     if 200 == response.status_code:
-        print(f'{website} is OK!')
+        results[website] = 'OK'
+    else:
+        results[website] = 'FAIL'
+
+print(results)
